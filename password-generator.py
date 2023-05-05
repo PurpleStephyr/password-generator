@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Copyright 2014 Steph Kraemer
+# Copyright 2014,2023 Steph Kraemer
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,11 +45,19 @@ def randint(low, high):
 
 allChars = '`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?'
 
+allChars_2 = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM.-_'"
+
+allChars_3 = '1234567890-=qwertyuiopasdfghjkl;\'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP|ASDFGHJKL:ZXCVBNM?'
+
+all_alphanumeric = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUBWXYZ'
+
 length = int(sys.argv[1])
 
 password = ''
 
+charset = allChars
+
 for i in range(length):
-    password += allChars[randint(0,len(allChars))]
+    password += charset[randint(0,len(charset)-1)]
 
 print(password)
